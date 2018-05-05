@@ -1,6 +1,6 @@
 const express = require('express'),
       router = express.Router(),
-      users = require('./users.api');
+      tasks = require('./tasks.api');
 
 
       router.param('id', (req, res, next, id) => {
@@ -9,22 +9,22 @@ const express = require('express'),
       });
 
 
-router.route('/save_user')
+router.route('/save_task')
   .post((req, res) => {
-    users.registrar(req,res);
+    tasks.registrar(req,res);
 });
 
 
-router.route('/get_all_users')
+router.route('/get_all_tasks')
   .get((req, res) => {
     console.log( 'uholi');
-    users.listarTodos(req,res);
+    tasks.listarTodos(req,res);
 });
 
 
-router.route('/update_user')
+router.route('/update_tasks')
   .put((req, res) => {
-    users.actualizar(req,res);
+    tasks.actualizar(req,res);
 });
 
 module.exports = router;

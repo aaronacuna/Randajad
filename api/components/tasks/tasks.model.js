@@ -2,19 +2,17 @@
 const mongoose = require('mongoose');
 
 //Esquema de usuarios
-var UserSchema = new mongoose.Schema({
+var TaskSchema = new mongoose.Schema({
 
-  cedula : {type : String, required : true},
-  primerNombre : {type : String, required : true},
-  segundoNombre : {type : String},
-  primerApellido : {type : String, required : true},
-  segundoApellido : {type : String},
-  edad : {type : String, required : true},
-  correo : {type : String, required : true, unique: true},
-  telefono : {type : String, required : true},
-  password : {type : String, required : true},
-  confirmedPassword : {type : String},
-  estado : {type : String, required : true}
+  usuario : {type : String},
+  nombre : {type : String, required : true},
+  descripcion : {type : String},
+  fechaAsignacion : {type : Date, required : true},
+  prioridad : {type : String},
+  estadoCompleto : {type : String, required : true},
+  costo : {type : String, required : true, unique: true},
+  proyecto : {type : String, required : true},
+  estado : {type : String, required : true},
 });
 
-module.exports = mongoose.model('User', UserSchema); 
+module.exports = mongoose.model('Task', TaskSchema); 

@@ -78,6 +78,9 @@
         data:{
           pageTitle: 'Registro de Tareas'
         },
+        params: {
+          objUsuarioTemp: ''
+        },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
             return $ocLazyLoad.load('./components/tasks/registerTasks/registerTasks.controller.js')
@@ -93,6 +96,9 @@
         data:{
           pageTitle: 'Lista de Tareas'
         },
+        params: {
+          objUsuarioTemp: ''
+        },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
             return $ocLazyLoad.load('./components/tasks/listTasks/listTasks.controller.js')
@@ -107,6 +113,9 @@
         templateUrl: './components/tasks/updateTasks/updateTasks.view.html',
         data:{
           pageTitle: 'Modificar Tarea'
+        },
+        params: {
+          objUsuarioTemp: ''
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {

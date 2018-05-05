@@ -1,69 +1,77 @@
-<table class="table table-striped table-dark responsive">
-  <h1>Usuarios</h1>
-  <thead>
-      <tr>
-          <th>Primer nombre</th>
-          <th>Segundo nombre</th>
-          <th>Primer apellido</th>
-          <th>Segundo apellido</th>
-          <th>Foto</th>
-          <th>Fecha de Nacimiento</th>
-          <th>Edad</th>
-          <th>Correo electrónico</th>
-          <th>Password</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr ng-repeat="usuario in vm.listaUsuarios" ng-if="usuario.estado === 'activo'">
-          <td>{{usuario.primerNombre}}</td>
-          <td>{{usuario.segundoNombre}}</td>
-          <td>{{usuario.primerApellido}}</td>
-          <td>{{usuario.segundoApellido}}</td>
-          <td>{{usuario.foto}}</td>
-          <td>{{usuario.fechaNacimiento}}</td>
-          <td>{{usuario.edad}}</td>
-          <td>{{usuario.correo}}</td>
-          <td>{{usuario.telefono}}</td>
-          <td>
-              <button class="btn btn-success" type="button" ng-click="vm.editUsuarios(usuario)">Editar</button>
-          </td>
-          <td>
-            <button class="btn btn-danger" type="button" ng-click="vm.eliminarUsuario(usuario)">Desactivar</button>
-          </td>
-      </tr>
-  </tbody>
-</table>
-<table class="table table-striped table-dark">
-<h1>Usuarios Desactivados</h1>
-  <thead>
-      <tr>
-        <tr>
-          <th>Primer nombre</th>
-          <th>Segundo nombre</th>
-          <th>Primer apellido</th>
-          <th>Segundo apellido</th>
-          <th>Foto</th>
-          <th>Fecha de Nacimiento</th>
-          <th>Edad</th>
-          <th>Correo electrónico</th>
-          <th>Password</th>
-      </tr>
-      </tr>
-  </thead>
-  <tbody>
-      <tr ng-repeat="usuario in vm.listaUsuarios" ng-if="usuario.estado === 'inactivo'">
-        <td>{{usuario.primerNombre}}</td>
-        <td>{{usuario.segundoNombre}}</td>
-        <td>{{usuario.primerApellido}}</td>
-        <td>{{usuario.segundoApellido}}</td>
-        <td>{{usuario.foto}}</td>
-        <td>{{usuario.fechaNacimiento}}</td>
-        <td>{{usuario.edad}}</td>
-        <td>{{usuario.correo}}</td>
-        <td>{{usuario.telefono}}</td>
-        <td>
-              <button class="btn btn-danger" type="button" ng-click="vm.activarUsuario(usuario)">Activar</button>
-          </td>
-      </tr>
-  </tbody>
-</table>
+<div id="tables" class="container-fluid">
+
+        <table class="table table-hover table-bordered responsive">
+                <h1>Usuarios</h1>
+                <thead class="table-secondary">
+                    <tr>
+                        <th>Primer nombre</th>
+                        <th>Segundo nombre</th>
+                        <th>Primer apellido</th>
+                        <th>Segundo apellido</th>
+                        <th>Foto</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Edad</th>
+                        <th>Correo electrónico</th>
+                        <th>Tareas</th>
+                        <th>Modificar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="usuario in vm.listaUsuarios" ng-if="usuario.estado === 'activo'">
+                        <td>{{usuario.primerNombre}}</td>
+                        <td>{{usuario.segundoNombre}}</td>
+                        <td>{{usuario.primerApellido}}</td>
+                        <td>{{usuario.segundoApellido}}</td>
+                        <td>{{usuario.foto}}</td>
+                        <td>{{usuario.fechaNacimiento}}</td>
+                        <td>{{usuario.edad}}</td>
+                        <td>{{usuario.correo}}</td>
+                        <td>
+                          <button class="btn btn-success" type="button" ng-click="vm.asignarTarea(usuario)">Asignar Tarea</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-success" type="button" ng-click="vm.editUsuarios(usuario)">Editar</button>
+                            <button class="btn btn-danger" type="button" ng-click="vm.eliminarUsuario(usuario)">Desactivar</button>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+              <table class="table table-hover table-bordered responsive">
+              <h1>Usuarios Desactivados</h1>
+                <thead class="table-secondary">
+                    <tr>
+                      <tr>
+                        <th>Primer nombre</th>
+                        <th>Segundo nombre</th>
+                        <th>Primer apellido</th>
+                        <th>Segundo apellido</th>
+                        <th>Foto</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Edad</th>
+                        <th>Correo electrónico</th>
+                        <th>Modificar</th>
+                    </tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="usuario in vm.listaUsuarios" ng-if="usuario.estado === 'inactivo'">
+                      <td>{{usuario.primerNombre}}</td>
+                      <td>{{usuario.segundoNombre}}</td>
+                      <td>{{usuario.primerApellido}}</td>
+                      <td>{{usuario.segundoApellido}}</td>
+                      <td>{{usuario.foto}}</td>
+                      <td>{{usuario.fechaNacimiento}}</td>
+                      <td>{{usuario.edad}}</td>
+                      <td>{{usuario.correo}}</td>
+                      <td>
+                            <button class="btn btn-danger" type="button" ng-click="vm.activarUsuario(usuario)">Activar</button>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+
+
+
+
+</div>
+

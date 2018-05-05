@@ -4,12 +4,16 @@
     .module('randajad')
     .controller('controllerListUser', controllerListUser);
     
-    controllerListUser.$inject = ['$state', '$stateParams', '$location', 'usersService'];
+    controllerListUser.$inject = ['$http','$state', '$stateParams', '$location', 'usersService'];
 
-  function controllerListUser($state, $stateParams, $location, usersService) {
+  function controllerListUser($http, $state, $stateParams, $location, usersService) {
     let vm = this;
 
     vm.listaUsuarios = listarUsuarios();
+
+    vm.asignarTarea = (pUsuario) =>{
+      $state.go('registerTasks', {objUsuarioTemp : JSON.stringify(pUsuario)});
+    };
     
     vm.editUsuarios = (pUsuario) =>{
       $state.go('updateUser', {objUsuarioTemp : JSON.stringify(pUsuario)});

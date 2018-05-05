@@ -1,40 +1,39 @@
-const UserModel = require('./users.model');
+const TaskModel = require('./tasks.model');
 
 module.exports.registrar = (req, res) => {
-  var newUser = new UserModel({
-    cedula              :  req.body.cedula,
-    primerNombre        :  req.body.primerNombre,
-    segundoNombre       :  req.body.segundoNombre,
-    primerApellido      :  req.body.primerApellido,
-    segundoApellido     :  req.body.segundoApellido,
-    edad                :  req.body.edad,
-    correo              :  req.body.correo,
-    telefono            :  req.body.telefono,
-    password            :  req.body.password,
-    confirmedPassword   :  req.body.confirmedPassword,
-    estado              :  req.body.estado,
+  var newTask = new TaskModel({
+    usuario              :  req.body.usuario,
+    nombre               :  req.body.nombre,
+    descripcion          :  req.body.descripcion,
+    fechaAsignacion      :  req.body.fechaAsignacion,
+    prioridad            :  req.body.prioridad,
+    estadoCompleto       :  req.body.estadoCompleto,
+    costo                :  req.body.costo,
+    proyecto             :  req.body.proyecto,
+    estado               :  req.body.estado,
+
   });
 
-  newUser.save((err) => {
+  newTask.save((err) => {
     if(err){
-      res.json({success:false, msj: 'Ha ocurrido un error en el registro de usuarios' + err});
+      res.json({success:false, msj: 'Ha ocurrido un error en el registro de tareas' + err});
     }else{
-      res.json({success:true, msj:'Se registró el usuario correctamente'});
+      res.json({success:true, msj:'Se registró la tarea correctamente'});
     }
   });
 };
 
 module.exports.listarTodos = (req,res) => {
-  UserModel.find().then((user) => {
-    console.log( 'usuri;o' + user);
-     res.send(user);
+  TaskModel.find().then((task) => {
+    console.log( 'tarea' + task);
+     res.send(task);
     
   });
 
 };
 
 module.exports.actualizar = (req,res) => {
-  UserModel.update({correo: req.body.correo}, req.body, (err, user) => {
+  TaskModel.update({usuario: req.body.usuario}, req.body, (err, task) => {
     if (err){
       res.json({success:false,msg:'No se ha actualizado.' + handleError(err)});
 

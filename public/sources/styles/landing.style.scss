@@ -52,7 +52,7 @@ header.masthead {
   position: relative;
   overflow: hidden;
   padding-top: calc(7rem + 72px);
-  padding-bottom: 7rem;
+  padding-bottom: 2rem;
   background-image: url("../sources/images/bg.jpg");
   background-repeat: no-repeat;
   background-position: center center;
@@ -63,7 +63,7 @@ header.masthead {
 header.masthead .masthead-content {
   z-index: 1;
   position: relative;
-  height: 100vh;
+  height: 500px;
 }
 
 header.masthead .masthead-content .masthead-heading {
@@ -88,12 +88,12 @@ header.masthead .masthead-content .masthead-subheading {
 }
 
 .bg-primary {
-  background-color: #ee0979 !important;
+  background-color: #2e1a24 !important;
 }
 
 .btn-primary {
-  background-color: #ee0979;
-  border-color: #ee0979;
+  background-color: #2e1a24;
+  border-color: #2e1a24;
 }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {

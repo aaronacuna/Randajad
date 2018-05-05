@@ -26,7 +26,7 @@ module.exports.registrar = (req, res) => {
 
 module.exports.listarTodos = (req,res) => {
   UserModel.find().then((user) => {
-    console.log( 'usurio' + user);
+    console.log( 'usuario' + user);
      res.send(user);
     
   });

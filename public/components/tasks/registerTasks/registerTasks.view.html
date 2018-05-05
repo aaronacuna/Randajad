@@ -1,0 +1,54 @@
+<h1 class="text-center">Ranjadad</h1>
+<h2 class="text-center">Registro de Tareas</h2>
+
+
+
+<form class="login-form" ng-submit="vm.registrarTarea(vm.nuevaTarea)">
+
+  <div class="form-group">
+    <label>Nombre</label>
+    <input type="text" class="form-control" ng-model="vm.nuevaTarea.nombre">
+  </div>
+
+  <div class="form-group">
+    <label>Descripción</label>
+    <input type="text" class="form-control" ng-model="vm.nuevaTarea.descripcion">
+  </div>
+
+  <div class="form-group">
+    <label>Fecha de Asignación</label>
+    <input type="date" class="form-control" ng-model="vm.nuevaTarea.fechaAsignacion">
+  </div>
+
+  <select ng-model="vm.nuevaTarea.prioridad">
+    <option value="">Seleccione la proridad de la tarea</option>
+    <option value="Alta">Alta</option>
+    <option value="Media">Media</option>
+    <option value="Baja">Baja</option>
+  </select>
+
+  <select ng-model="vm.nuevaTarea.estadoCompleto">
+    <option value="">Seleccione el estado de la tarea</option>
+    <option value="Realizada">Realizada</option>
+    <option value="En Curso">En Curso</option>
+    <option value="Pendiente">Pendiente</option>
+  </select>
+
+  <div class="form-group">
+    <label>Costo en $</label>
+    <input type="text" class="form-control" ng-model="vm.nuevaTarea.costo">
+  </div>
+
+  <select ng-model="vm.nuevaTarea.proyecto">
+    <option value="">Seleccione el proyecto</option>
+    <option value="Sitio web para Tosty">Sitio web para Tosty</option>
+    <option value="Aplicación web para Necrohana">Aplicación web para Necrohana</option>
+    <option value="Lanzamiento de Sailor Moon S">Lanzamiento de Sailor Moon S</option>
+    <option value="Sitio web para la película Chancleta">Sitio web para la película “Chancleta”</option>
+  </select>
+
+  <div class="form-check">
+    <button type="submit" class="btn btn-login">Registrar Tarea</button>
+  </div>
+
+</form>

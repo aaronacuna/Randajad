@@ -38,13 +38,13 @@ app.use( (req, res, next) => {
 });
 
 const users = require('./components/users/users.route'),
-      // tasks = require ('./components/tasks/tasks.route.js'),
+      tasks = require ('./components/tasks/tasks.route.js'),
       index = require('./index');
 
 
 
 app.use('/api', users);
-// app.use ('/api', tasks);
+app.use ('/api', tasks);
 app.use('/', index);
 
 

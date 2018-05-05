@@ -1,0 +1,71 @@
+<div id="tables" class="container-fluid">
+
+        <table class="table table-hover table-bordered responsive">
+                <h1>Tareas</h1>
+                <thead class="table-secondary">
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Fecha de Asignación</th>
+                        <th>Prioridad</th>
+                        <th>Estado</th>
+                        <th>Costo</th>
+                        <th>Proyecto</th>
+                        <th>Modificar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="tarea in vm.listaTareas" ng-if="tarea.estado === 'activo'">
+                        <td>{{tarea.usuario}}</td>
+                        <td>{{tarea.nombre}}</td>
+                        <td>{{tarea.descripcion}}</td>
+                        <td>{{tarea.fechaAsignacion}}</td>
+                        <td>{{tarea.prioridad}}</td>
+                        <td>{{tarea.estadoCompleto}}</td>
+                        <td>{{tarea.costo}}</td>
+                        <td>{{tarea.proyecto}}</td>
+                        <td>
+                            <button class="btn btn-success" type="button" ng-click="vm.editTarea(tarea)">Editar</button>
+                          <button class="btn btn-danger" type="button" ng-click="vm.eliminarTarea(tarea)">Desactivar</button>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+              <table class="table table-hover table-bordered responsive">
+              <h1>Tareas Desactivadas</h1>
+                <thead class="table-secondary">
+                    <tr>
+                      <tr>
+                        <th>Usuario</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Fecha de Asignación</th>
+                        <th>Prioridad</th>
+                        <th>Estado</th>
+                        <th>Costo</th>
+                        <th>Proyecto</th>
+                        <th>Modificar</th>
+                    </tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="tarea in vm.listaTareas" ng-if="tarea.estado === 'inactivo'">
+                      <td>{{tarea.usuario}}</td>
+                      <td>{{tarea.nombre}}</td>
+                      <td>{{tarea.descripcion}}</td>
+                      <td>{{tarea.fechaAsignacion}}</td>
+                      <td>{{tarea.prioridad}}</td>
+                      <td>{{tarea.estadoCompleto}}</td>
+                      <td>{{tarea.costo}}</td>
+                      <td>{{tarea.proyecto}}</td>
+                      <td>
+                        <button class="btn btn-danger" type="button" ng-click="vm.activarTarea(tarea)">Activar</button>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+
+
+</div>
+

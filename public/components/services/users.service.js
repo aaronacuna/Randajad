@@ -23,6 +23,9 @@
             addUsers: _addUsers,
             getUsers: _getUsers,
             updateUsers: _updateUsers,
+            addTarea: _addTarea,
+            getTarea: _getTarea,
+            updateTarea: _updateTarea,
             }
         
             return publicAPI
@@ -43,7 +46,7 @@
      
                     let objUsuarioTemp = new Usuario(objUsuario.primerNombre, objUsuario.segundoNombre, objUsuario.primerApellido, objUsuario.segundoApellido, objUsuario.foto, objUsuario.fechaNacimiento, objUsuario.edad, objUsuario.correo, objUsuario.password)
                     objUsuarioTemp.cambiarEstado(objUsuario.estado);
-                    
+                    objUsuarioTemp.setId(objUsuario._id);
                     listaUsuarios.push(objUsuarioTemp);
                 });
 
@@ -60,6 +63,38 @@
 
             return modificacionExitosa;
         }
+
+        
+        function _addTarea(pNuevaTarea) {
+            let registroExitoso = false;
+
+            registroExitoso = dataStorageFactory.setTasksData(pNuevaTarea);
+
+            return registroExitoso;
+        }
+
+        function _getTarea() {
+            let listaTareas = [];
+            let listaTareasBD = dataStorageFactory.getTasksData();
+            listaTareasBD.forEach(objTarea => {
+     
+                    let objTareaTemp = new Tarea(objTarea.usuario, objTarea.nombre, objTarea.descripcion, objTarea.fechaAsignacion, objTarea.prioridad, objTarea.estadoCompleto, objTarea.costo, objTarea.proyecto)
+                    objTareaTemp.cambiarEstado(objTarea.estado);
+                    listaTareas.push(objTareaTemp);
+                });
+
+
+            return listaTareas;
+        };
+
+        function _updateTarea(pTarea) {
+            let modificacionExitosa = false;
+
+            modificacionExitosa = dataStorageFactory.updateTasksData(pTarea);
+
+            return modificacionExitosa;
+        }
+
 
         };
         

@@ -1,6 +1,6 @@
 class Usuario {
   constructor(pPrimerNombre, pSegundoNombre, pPrimerApellido, pSegundoApellido, pFoto, pFechaNacimiento, pEdad, pCorreo, pPassword) {
-
+      this._id = 0;
       this.primerNombre = pPrimerNombre;
       this.segundoNombre = pSegundoNombre;
       this.primerApellido = pPrimerApellido;
@@ -14,11 +14,15 @@ class Usuario {
       this.estado = 'activo';
   }
 
+  setId(pId){
+    this._id= pId;
+}
+
   cambiarEstado(pEstado) {
       this.estado = pEstado;
   }
 
-  agregarTarea(pNuevaTarea) {
+    addTask(pNuevaTarea) {
     this.listaTareas.push(pNuevaTarea);
   }
   
@@ -26,8 +30,8 @@ class Usuario {
 
 
 class Tarea{
-  constructor(pNombre, pDescripcion, pFechaAsignacion, pPrioridad, pEstadoCompleto, pCosto, pProyecto){
-
+  constructor(pUsuario, pNombre, pDescripcion, pFechaAsignacion, pPrioridad, pEstadoCompleto, pCosto, pProyecto){
+      this.usuario = pUsuario;
       this.nombre = pNombre;
       this.descripcion = pDescripcion;
       this.fechaAsignacion = pFechaAsignacion;
