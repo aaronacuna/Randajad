@@ -2,17 +2,17 @@ const UserModel = require('./users.model');
 
 module.exports.registrar = (req, res) => {
   var newUser = new UserModel({
-    cedula              :  req.body.cedula,
     primerNombre        :  req.body.primerNombre,
     segundoNombre       :  req.body.segundoNombre,
     primerApellido      :  req.body.primerApellido,
     segundoApellido     :  req.body.segundoApellido,
+    foto                :  req.body.foto,
     edad                :  req.body.edad,
     correo              :  req.body.correo,
-    telefono            :  req.body.telefono,
+    fechaNacimiento     :  req.body.fechaNacimiento,
     password            :  req.body.password,
-    confirmedPassword   :  req.body.confirmedPassword,
     estado              :  req.body.estado,
+    listaTareas         :  req.body.listaTareas,
   });
 
   newUser.save((err) => {
@@ -26,7 +26,7 @@ module.exports.registrar = (req, res) => {
 
 module.exports.listarTodos = (req,res) => {
   UserModel.find().then((user) => {
-    console.log( 'usuri;o' + user);
+    console.log( 'usurio' + user);
      res.send(user);
     
   });

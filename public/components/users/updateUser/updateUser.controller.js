@@ -44,6 +44,7 @@
           objUsuario.foto = pUsuario.foto;
           objUsuario.fechaNacimiento = pUsuario.fechaNacimiento;
           objUsuario.edad = pUsuario.edad;
+          objUsuario.correo = pUsuario.correo;
           objUsuario.password = pUsuario.password;
           
 

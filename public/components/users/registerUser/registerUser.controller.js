@@ -4,9 +4,9 @@
     .module('randajad')
     .controller('controllerRegisterUser', controllerRegisterUser);
     
-    controllerRegisterUser.$inject = ['$http','$state', '$stateParams', '$location', 'usersService', 'imageService'];
+    controllerRegisterUser.$inject = ['$http','$state', '$stateParams', '$location', 'usersService'];
 
-  function controllerRegisterUser($http ,$state, $stateParams, $location, usersService, imageService) {
+  function controllerRegisterUser($http ,$state, $stateParams, $location, usersService) {
     let vm = this;
 
     vm.nuevoUsuario = {};

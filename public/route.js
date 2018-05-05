@@ -14,13 +14,6 @@
         data: {
           pageTitle: 'Randajad App'
         },
-        resolve: {
-          load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/landing/landing.controller.js')
-          }]
-        },
-        controller: 'controllerLanding',
-        controllerAs: 'vm'
       })
 
       .state('registerUser', {

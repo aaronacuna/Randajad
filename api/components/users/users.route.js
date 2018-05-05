@@ -17,7 +17,7 @@ router.route('/save_user')
 
 router.route('/get_all_users')
   .get((req, res) => {
-    console.log( 'uholi');
+    console.log( 'list');
     users.listarTodos(req,res);
 });
 
