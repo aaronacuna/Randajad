@@ -79,8 +79,8 @@
         controllerAs: 'vm'
       })
 
-      .state('registerTask', {
-        url: '/registerTask',
+      .state('registerTasks', {
+        url: '/registerTasks',
         templateUrl: './components/tasks/registerTasks/registerTasks.view.html',
         data:{
           pageTitle: 'Registro de Tareas'
