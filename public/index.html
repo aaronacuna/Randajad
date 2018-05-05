@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="randajad">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Aarón Acuña">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title page-title>Randajad App</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="./lib/bootstrap/bootstrap.min.css">
+  
+  <!-- Estilo Generales -->
+  <link rel="stylesheet" href="./sources/styles.min.css">
+
+</head>
+
+<body>
+
+  <div ui-view></div>
+
+  <!-- Dependencias -->
+  <script src="./lib/bootstrap/jquery.min.js"></script>
+  <script src="./lib/bootstrap/popper.min.js"></script>
+  <script src="./lib/bootstrap/bootstrap.min.js"></script>
+  <script src="./lib/sweetalert/sweetalert.min.js"></script>
+
+
+  <!-- Script de Angular -->
+  <script src="./lib/angular/angular.min.js"></script>
+  
+  <!-- Dependencias de Angular -->
+  <script src="./lib/angular/routing/angular-ui-router.min.js"></script>
+  <script src="./lib/angular/routing/ocLazyLoad.min.js"></script>
+  <script src="./lib/angular/routing/page-title.min.js"></script>
+
+  <!-- Script de la aplicación -->
+  <script src="./clases.js"></script>
+  <script src="./app.js"></script>
+  <script src="./route.js"></script>
+
+
+  <!-- servicios -->
+  <script src="./components/services/usuarios.service.js"></script>
+  <script src="./components/services/tareas.service.js"></script>
+  <script src="./components/services/image.service.js"></script>
+
+    <!--
+    Factories
+  -->
+  <script src="./components/factories/dataStorage.factory.js"></script>
+
+  
+  <!-- directivas -->
+  <!-- <script src="./components/directives/imgUpload/imgUpload.directive.js"></script> -->
+
+  
+  
+</body>
+
+</html>
