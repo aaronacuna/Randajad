@@ -97,7 +97,7 @@
           pageTitle: 'Lista de Tareas'
         },
         params: {
-          objUsuarioTemp: ''
+          objTareaTemp: ''
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
@@ -115,7 +115,7 @@
           pageTitle: 'Modificar Tarea'
         },
         params: {
-          objUsuarioTemp: ''
+          objTareaTemp: ''
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
