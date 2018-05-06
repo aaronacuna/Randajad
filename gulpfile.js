@@ -61,6 +61,12 @@ gulp.task('dependencies', () => {
   ])
     .pipe(gulp.dest('./public/lib/sweetalert'));
 
+    gulp.src([
+      './node_modules/ng-file-upload/dist/ng-file-upload.min.js',
+      './node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js'
+    ])
+      .pipe(gulp.dest('./public/lib/angular/dependencies'));
+
 
 });
 
