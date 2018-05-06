@@ -13,7 +13,12 @@
  
     vm.registrarUsuario = (pNuevoUsuario) => {
 
-      let objNuevoUsuario = new Usuario(pNuevoUsuario.primerNombre, pNuevoUsuario.segundoNombre, pNuevoUsuario.primerApellido, pNuevoUsuario.segundoApellido, pNuevoUsuario.foto, pNuevoUsuario.fechaNacimiento, pNuevoUsuario.edad, pNuevoUsuario.correo,  pNuevoUsuario.password);
+      let annoActual = new Date().getFullYear();
+      let annoNacimiento = new Date(pNuevoUsuario.fechaNacimiento).getFullYear();
+
+      let edad = annoActual - annoNacimiento;
+
+      let objNuevoUsuario = new Usuario(pNuevoUsuario.primerNombre, pNuevoUsuario.segundoNombre, pNuevoUsuario.primerApellido, pNuevoUsuario.segundoApellido, pNuevoUsuario.foto, pNuevoUsuario.fechaNacimiento, edad, pNuevoUsuario.correo,  pNuevoUsuario.password);
 
       let registro = usersService.addUsers(objNuevoUsuario);
 
