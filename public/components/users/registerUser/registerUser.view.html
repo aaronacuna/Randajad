@@ -8,56 +8,72 @@
           
           
           
-          <form class="login-form" ng-submit="vm.registrarUsuario(vm.nuevoUsuario)">
+          <form name="formularioEmpleados" class="login-form" ng-submit="vm.registrarUsuario(vm.nuevoUsuario)" novalidate autocomplete="off">
           
             <div class="form-group">
               <label>Nombre</label>
-              <input type="text" class="form-control" ng-model="vm.nuevoUsuario.primerNombre">
+              <input name="nombre" type="text" class="form-control" ng-model="vm.nuevoUsuario.primerNombre" ng-required="true">
+              <div ng-show="formularioEmpleados.nombre.$touched && formularioEmpleados.nombre.$invalid">
+                <small>Ingrese un nombre válido</small>
+              </div>
             </div>
           
             <div class="form-group">
               <label>Segundo Nombre</label>
-              <input type="text" class="form-control" ng-model="vm.nuevoUsuario.segundoNombre">
+              <input name="nombre2" type="text" class="form-control" ng-model="vm.nuevoUsuario.segundoNombre">
             </div>
           
             <div class="form-group">
               <label>Apellido</label>
-              <input type="text" class="form-control" ng-model="vm.nuevoUsuario.primerApellido">
+              <input name="apellido" type="text" class="form-control" ng-model="vm.nuevoUsuario.primerApellido" ng-required="true">
+              <div ng-show="formularioEmpleados.apellido.$touched && formularioEmpleados.apellido.$invalid">
+                <small>Ingrese un apellido válido</small>
+              </div>
             </div>
           
             <div class="form-group">
               <label>Segundo Apellido</label>
-              <input type="text" class="form-control" ng-model="vm.nuevoUsuario.segundoApellido">
+              <input name="apellido2" type="text" class="form-control" ng-model="vm.nuevoUsuario.segundoApellido">
             </div>
           
             <div class="form-group">
               <label>Foto</label>
-              <input type="text" class="form-control" ng-model="vm.nuevoUsuario.foto">
+              <input name="foto" type="text" class="form-control" ng-model="vm.nuevoUsuario.foto">
             </div>
-          
-            <div class="form-group">
-              <label>Fecha de Nacimiento</label>
-              <input type="date" class="form-control" ng-model="vm.nuevoUsuario.fechaNacimiento">
+
+
+          <div class="form-group">
+            <label>Fecha de Nacimiento</label>
+            <input name="fechaNacimiento" type="date" class="form-control" ng-model="vm.nuevoUsuario.fechaNacimiento" ng-required="true">
+            <div ng-show="formularioEmpleados.fechaNacimiento.$touched && formularioEmpleados.fechaNacimiento.$invalid">
+              <small>Ingrese una fecha válida</small>
             </div>
+          </div>
             
             <div class="form-group">
               <label>Edad</label>
-              <input type="number" class="form-control" ng-model="vm.nuevoUsuario.edad">
+              <input name="edad" type="number" class="form-control" ng-model="vm.nuevoUsuario.edad">
             </div>
           
             <div class="form-group">
               <label>Email</label>
-              <input type="email" class="form-control" ng-model="vm.nuevoUsuario.correo">
+              <input name="email" type="email" class="form-control" ng-model="vm.nuevoUsuario.correo" ng-required="true">
+              <div ng-show="formularioEmpleados.email.$touched && formularioEmpleados.email.$invalid">
+                <small>Formato de correo inválido</small>
+              </div>
             </div>
           
             <div class="form-group">
               <label>Contraseña</label>
-              <input type="password" class="form-control" ng-model="vm.nuevoUsuario.password">
+              <input name="password" type="password" class="form-control" ng-model="vm.nuevoUsuario.password" ng-required="true">
+              <div ng-show="formularioEmpleados.password.$touched && formularioEmpleados.password.$invalid">
+                  <small>Ingrese una contraseña válida</small>
+                </div>
             </div>
             
           
             <div class="form-check">
-              <button type="submit" class="btn btn-login">Registrarse</button>
+              <button type="submit" class="btn btn-login" ng-disabled="formularioEmpleados.$invalid">Registrarse</button>
             </div>
           
           </form>

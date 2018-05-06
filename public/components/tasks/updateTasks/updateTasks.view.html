@@ -7,52 +7,84 @@
 
 
 
-        <form class="login-form" ng-submit="vm.editTarea(vm.editarTarea)">
+        <form name="formularioEditTareas" class="login-form" ng-submit="vm.editTarea(vm.editarTarea)" novalidate autocomplete="off">
 
           <div class="form-group">
             <label>Nombre</label>
-            <input type="text" class="form-control" ng-model="vm.editarTarea.nombre">
+            <input name="nombre" type="text" class="form-control" ng-model="vm.editarTarea.nombre">
+            <div ng-show="formularioEditTareas.nombre.$touched && formularioEditTareas.nombre.$invalid">
+                <small>Ingrese un nombre válido</small>
+              </div>
           </div>
 
           <div class="form-group">
             <label>Descripción</label>
-            <input type="text" class="form-control" ng-model="vm.editarTarea.descripcion">
+            <input name="descripcion" type="text" class="form-control" ng-model="vm.editarTarea.descripcion">
+            <div ng-show="formularioEditTareas.descripcion.$touched && formularioEditTareas.descripcion.$invalid">
+                <small>Ingrese una descripción válida</small>
+              </div>
           </div>
 
           <div class="form-group">
             <label>Fecha de Asignación</label>
-            <input type="date" class="form-control" ng-model="vm.editarTarea.fechaAsignacion">
+            <input name="fechaAsignacion" type="date" class="form-control" ng-model="vm.editarTarea.fechaAsignacion">
+            <div ng-show="formularioEditTareas.fechaAsignacion.$touched && formularioEditTareas.fechaAsignacion.$invalid">
+                <small>Ingrese una fecha válida</small>
+              </div>
           </div>
 
-          <select ng-model="vm.editarTarea.prioridad">
-            <option value="">Seleccione la proridad de la tarea</option>
-            <option value="Alta">Alta</option>
-            <option value="Media">Media</option>
-            <option value="Baja">Baja</option>
-          </select>
+          <div class="form-group">
+              <select name="prioridad" ng-model="vm.editarTarea.prioridad">
+                  <option value="">Seleccione la proridad de la tarea</option>
+                  <option value="Alta">Alta</option>
+                  <option value="Media">Media</option>
+                  <option value="Baja">Baja</option>
+                </select>
+                <div ng-show="formularioEditTareas.prioridad.$touched && formularioEditTareas.prioridad.$invalid">
+                    <small>Ingrese una prioridad</small>
+                  </div>
+          </div>
 
-          <select ng-model="vm.editarTarea.estadoCompleto">
-            <option value="">Seleccione el estado de la tarea</option>
-            <option value="Realizada">Realizada</option>
-            <option value="En Curso">En Curso</option>
-            <option value="Pendiente">Pendiente</option>
-          </select>
+
+          <div class="form-group">
+              <select name="estadoCompleto" ng-model="vm.editarTarea.estadoCompleto">
+                  <option value="">Seleccione el estado de la tarea</option>
+                  <option value="Realizada">Realizada</option>
+                  <option value="En Curso">En Curso</option>
+                  <option value="Pendiente">Pendiente</option>
+                </select>
+                <div ng-show="formularioEditTareas.estadoCompleto.$touched && formularioEditTareas.estadoCompleto.$invalid">
+                    <small>Ingrese el estado de la tarea</small>
+                  </div>
+            </div>
+
+
 
           <div class="form-group">
             <label>Costo en $</label>
-            <input type="text" class="form-control" ng-model="vm.editarTarea.costo">
+            <input name="costo" type="text" class="form-control" ng-model="vm.editarTarea.costo">
+            <div ng-show="formularioEditTareas.estadoCompleto.$touched && formularioEditTareas.estadoCompleto.$invalid">
+                <small>Ingrese el costo</small>
+              </div>
           </div>
 
-          <select ng-model="vm.editarTarea.proyecto">
-            <option value="">Seleccione el proyecto</option>
-            <option value="Sitio web para Tosty">Sitio web para Tosty</option>
-            <option value="Aplicación web para Necrohana">Aplicación web para Necrohana</option>
-            <option value="Lanzamiento de Sailor Moon S">Lanzamiento de Sailor Moon S</option>
-            <option value="Sitio web para la película Chancleta">Sitio web para la película “Chancleta”</option>
-          </select>
+          <div class="form-group">
+              <select name="proyecto" ng-model="vm.editarTarea.proyecto">
+                  <option value="">Seleccione el proyecto</option>
+                  <option value="Sitio web para Tosty">Sitio web para Tosty</option>
+                  <option value="Aplicación web para Necrohana">Aplicación web para Necrohana</option>
+                  <option value="Lanzamiento de Sailor Moon S">Lanzamiento de Sailor Moon S</option>
+                  <option value="Sitio web para la película Chancleta">Sitio web para la película “Chancleta”</option>
+                </select>     
+                <div ng-show="formularioEditTareas.proyecto.$touched && formularioEditTareas.proyecto.$invalid">
+                    <small>Ingrese el proyecto de la tarea</small>
+                  </div>       
+            </div>
+
+
 
           <div class="form-check">
-            <button type="submit" class="btn btn-login">Editar Tarea</button>
+            <button type="submit" class="btn btn-login" ng-disabled="formularioEditTareas.$invalid">Editar Tarea</button>
           </div>
 
         </form>

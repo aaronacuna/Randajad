@@ -38,3 +38,11 @@
   .banner-text h2:after{content:" "; width:100px; height:5px; background:#FFF; display:block; margin-top:20px; border-radius:3px;}
   .banner-text p{color:#fff;}
   }
+
+  input.ng-invalid.ng-touched {
+    border: 2px solid red;
+  }
+
+  select.ng-invalid.ng-touched {
+    border: 2px solid red;
+  }
