@@ -1,5 +1,5 @@
 (() => {
   'use strict';
   angular
-  .module('randajad', ['appRoutes']);
+  .module('randajad', ['appRoutes', 'ngFileUpload']);
 })();

@@ -4,9 +4,9 @@
     .module('randajad')
     .controller('controllerListUser', controllerListUser);
     
-    controllerListUser.$inject = ['$http','$state', '$stateParams', '$location', 'usersService'];
+    controllerListUser.$inject = ['$http','$state', '$stateParams', '$location', 'usersService', 'imageService', 'Upload'];
 
-  function controllerListUser($http, $state, $stateParams, $location, usersService) {
+  function controllerListUser($http, $state, $stateParams, $location, usersService, imageService, Upload) {
     let vm = this;
 
     vm.listaUsuarios = listarUsuarios();

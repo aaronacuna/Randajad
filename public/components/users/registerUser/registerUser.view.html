@@ -8,7 +8,7 @@
           
           
           
-          <form name="formularioEmpleados" class="login-form" ng-submit="vm.registrarUsuario(vm.nuevoUsuario)" novalidate autocomplete="off">
+          <form name="formularioEmpleados" class="login-form" ng-submit="vm.preRegistrarUsuario(vm.nuevoUsuario)" novalidate autocomplete="off">
           
             <div class="form-group">
               <label>Nombre</label>
@@ -38,7 +38,7 @@
           
             <div class="form-group">
               <label>Foto</label>
-              <input name="foto" type="text" class="form-control" ng-model="vm.nuevoUsuario.foto">
+              <input name="foto" input type="file" img-upload class="form-control" ng-model="vm.nuevoUsuario.foto">
             </div>
 
 
