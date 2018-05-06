@@ -29,7 +29,7 @@
             <label>Fecha de Asignación</label>
             <input name="fechaAsignacion" type="date" class="form-control" ng-model="vm.nuevaTarea.fechaAsignacion" ng-required="true">
             <div ng-show="formularioTareas.fechaAsignacion.$touched && formularioTareas.fechaAsignacion.$invalid">
-                <small>Ingrese una fecha válida</small>
+                <small>Ingrese una fecha válida, no puede ser futura</small>
               </div>
           </div>
 
@@ -60,9 +60,9 @@
 
           <div class="form-group">
             <label>Costo en $</label>
-            <input name="costo" type="text" class="form-control" ng-model="vm.nuevaTarea.costo" ng-required="true">
-            <div ng-show="formularioTareas.estadoCompleto.$touched && formularioTareas.estadoCompleto.$invalid">
-                <small>Ingrese el costo</small>
+            <input name="costo" type="number" class="form-control" min="1" ng-model="vm.nuevaTarea.costo" ng-required="true">
+            <div ng-show="formularioTareas.costo.$touched && formularioTareas.costo.$invalid">
+                <small>Ingrese el costo, no puede ser igual a 0</small>
               </div>
           </div>
 

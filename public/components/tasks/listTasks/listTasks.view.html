@@ -5,6 +5,7 @@
                 <h1>Tareas</h1>
                 <p>Filtrar por empleado <input type="text" placeholder="Correo Electrónico" ng-model="buscarCorreo"></p>
                 <p>Filtrar por proyecto <input type="text" placeholder="Nombre del Proyecto" ng-model="buscarProyecto"></p>
+                <p>Tabla por fecha de Asignación Descendente</p>
                 
                 
                 <thead class="table-secondary">
@@ -62,7 +63,7 @@
                       <td>{{tarea.usuario}}</td>
                       <td>{{tarea.nombre}}</td>
                       <td>{{tarea.descripcion}}</td>
-                      <td>{{tarea.fechaAsignacion}}</td>
+                      <td>{{tarea.fechaAsignacion | date:'dd MMM yyyy'}}</td>
                       <td>{{tarea.prioridad}}</td>
                       <td>{{tarea.estadoCompleto}}</td>
                       <td>{{tarea.costo}}</td>

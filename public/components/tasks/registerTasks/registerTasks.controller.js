@@ -10,7 +10,7 @@
     let vm = this;
 
     vm.nuevaTarea = {};
-    
+
     
     vm.registrarTarea = (pnuevaTarea) => {
       let objUsuarioAsignar = JSON.parse ($stateParams.objUsuarioTemp);

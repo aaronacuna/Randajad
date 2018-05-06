@@ -60,9 +60,9 @@
           
             <div class="form-group">
               <label>Contraseña</label>
-              <input name="password" type="password" class="form-control" ng-model="vm.nuevoUsuario.password" ng-required="true">
+              <input name="password" type="password" class="form-control" ng-model="vm.nuevoUsuario.password" minlength="8" ng-required="true">
               <div ng-show="formularioEmpleados.password.$touched && formularioEmpleados.password.$invalid">
-                  <small>Ingrese una contraseña válida</small>
+                  <small>Ingrese una contraseña válida de al menos 8 caracteres</small>
                 </div>
             </div>
             
