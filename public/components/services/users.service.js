@@ -42,9 +42,10 @@
         function _getUsers() {
             let listaUsuarios = [];
             let listaUsuariosBD = dataStorageFactory.getUsersData();
+            
             listaUsuariosBD.forEach(objUsuario => {
-     
-                    let objUsuarioTemp = new Usuario(objUsuario.primerNombre, objUsuario.segundoNombre, objUsuario.primerApellido, objUsuario.segundoApellido, objUsuario.foto, objUsuario.fechaNacimiento, objUsuario.edad, objUsuario.correo, objUsuario.password)
+                    let tempDate = new Date(objUsuario.fechaNacimiento);
+                    let objUsuarioTemp = new Usuario(objUsuario.primerNombre, objUsuario.segundoNombre, objUsuario.primerApellido, objUsuario.segundoApellido, objUsuario.foto, tempDate, objUsuario.edad, objUsuario.correo, objUsuario.password)
                     objUsuarioTemp.cambiarEstado(objUsuario.estado);
                     objUsuarioTemp.setId(objUsuario._id);
                     listaUsuarios.push(objUsuarioTemp);
@@ -77,8 +78,8 @@
             let listaTareas = [];
             let listaTareasBD = dataStorageFactory.getTasksData();
             listaTareasBD.forEach(objTarea => {
-     
-                    let objTareaTemp = new Tarea(objTarea.usuario, objTarea.nombre, objTarea.descripcion, objTarea.fechaAsignacion, objTarea.prioridad, objTarea.estadoCompleto, objTarea.costo, objTarea.proyecto)
+                    let tempDate = new Date(objTarea.fechaAsignacion);
+                    let objTareaTemp = new Tarea(objTarea.usuario, objTarea.nombre, objTarea.descripcion, tempDate, objTarea.prioridad, objTarea.estadoCompleto, objTarea.costo, objTarea.proyecto)
                     objTareaTemp.cambiarEstado(objTarea.estado);
                     listaTareas.push(objTareaTemp);
                 });

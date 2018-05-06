@@ -14,6 +14,7 @@
                         <th>Costo</th>
                         <th>Proyecto</th>
                         <th>Modificar</th>
+                        <th>Desactivar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,14 +22,16 @@
                         <td>{{tarea.usuario}}</td>
                         <td>{{tarea.nombre}}</td>
                         <td>{{tarea.descripcion}}</td>
-                        <td>{{tarea.fechaAsignacion}}</td>
+                        <td>{{tarea.fechaAsignacion | date:'dd MMM yyyy'}}</td>
                         <td>{{tarea.prioridad}}</td>
                         <td>{{tarea.estadoCompleto}}</td>
                         <td>{{tarea.costo}}</td>
                         <td>{{tarea.proyecto}}</td>
                         <td>
                             <button class="btn btn-success" type="button" ng-click="vm.editTarea(tarea)">Editar</button>
-                          <button class="btn btn-danger" type="button" ng-click="vm.eliminarTarea(tarea)">Desactivar</button>
+                        </td>
+                        <td>
+                                <button class="btn btn-danger" type="button" ng-click="vm.eliminarTarea(tarea)">Desactivar</button>
                         </td>
                     </tr>
                 </tbody>
